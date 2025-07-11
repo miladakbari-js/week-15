@@ -1,3 +1,4 @@
+import styles from "./App.module.css";
 import { useState } from "react";
 import Input from "./Input";
 import cities from "./cities.json";
@@ -9,21 +10,21 @@ function App() {
   const handleChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
-
-    // if (!value) {
-    //   setHint("");
-    // } else {
-    //   const match = cities.find((city) => city.startsWith(value));
-    //   setHint(match || "");
-    // }
-
     const closestMatch = cities.find((city) => city.startsWith(value)) || "";
     setHint(value ? closestMatch : "");
   };
 
   return (
-    <div>
-      <Input hint={hint} handleChange={handleChange} inputValue={inputValue} />
+    <div className={styles.container}>
+      <img src="./start.png" alt="startpic" />
+      <div className={styles.search}>
+        <h1>Search Cities</h1>
+        <Input
+          hint={hint}
+          handleChange={handleChange}
+          inputValue={inputValue}
+        />
+      </div>
     </div>
   );
 }
