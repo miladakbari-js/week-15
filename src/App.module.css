@@ -14,5 +14,10 @@
 }
 .container h1 {
   color: #240476;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+.container p{
+  width: 350px;
+  line-height: 25px;
+  font-style: italic;
 }
